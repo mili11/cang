@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"> -->
+<!-- 引入组件库 -->
+    <!-- <script src="https://unpkg.com/element-ui/lib/index.js"></script> -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        @media screen and (max-width: 300px ){
+            body {
+                background-color: lightgreen;
+            }
+            .demo1 span:nth-child(1){
+                display: none;
+            }
+            
+
+        }
+       
+        body{
+            font-size: 16px;
+        }
+        .demo{
+            display: flex;
+            justify-content: space-around;
+            /* flex-wrap: wrap; */
+        }
+        .demo span{
+            flex:0 0 0.5rem;
+            height: 0.5rem;
+            /* width: 80px; */
+            background: blue;
+            border-radius: 50%;
+        }
+        .demo span:nth-child(1){
+            /* flex:1 1 auto; */
+        }
+        .demo1{
+            display: flex;
+            justify-content: space-between;
+        }
+        .demo1 span:nth-child(1){
+            height: 50px;
+            width:50px;
+            background: red;
+        }
+        .demo1 span:nth-child(2){
+            height: 50px;
+            flex: 1 0 300px;
+            background: blue;
+        }
+        .demo1 span:nth-child(3){
+            height: 50px;
+            width: 100px;
+            background: gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <span>11</span>
+        <span>22</span>
+        <span>33</span>
+        <span>44</span>
+    </div>
+    <div class="demo1">
+            <span>11</span>
+            <span>33</span>
+            <span>44</span>
+        </div>
+
+</body>
+</html>
+<script>
+     var body = document.body;
+     window.addEventListener('resize',function(){
+        var width = parseFloat(getComputedStyle(body,null).width);
+        var html = document.getElementsByTagName('html')[0];
+        var x = 100* width /360;
+        html.style.fontSize = x + "px";
+     },false);
+</script>
